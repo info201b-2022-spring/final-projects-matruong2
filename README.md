@@ -1,9 +1,3 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
-
 # Final Project Proposal
 
 Em Tallman, Jirat Rymparsurat, Martin Truong, Tyler Takeuchi
@@ -17,6 +11,7 @@ Em Tallman, Jirat Rymparsurat, Martin Truong, Tyler Takeuchi
 ## Finding Data
 
 -   Where did you download the data (e.g., a web URL)?
--   How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?
+-   How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), 
+      and who or what the data is about?
 -   How many observations (rows) are in your data?
 -   How many features (columns) are in the data?
