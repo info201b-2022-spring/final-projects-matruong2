@@ -35,9 +35,12 @@ https://www.kaggle.com/code/szamil/suicide-in-the-twenty-first-century/data
 
 This set of data was collected by WHO, and it talks about suicide rates throughout the world.
 The data talks about world suicide rates.
-There are 6 features and observations is 43776.
+There are 6 features and 43776 observations.
 We can answer teh amount of suicides by year, sex, and age. 
 
 ### Dataset 3
 
-put answers here
+https://www.kaggle.com/datasets/twinkle0705/mental-health-and-suicide-rates?select=Human+Resources.csv
+
+
+There are 6 features and 107 observations.
