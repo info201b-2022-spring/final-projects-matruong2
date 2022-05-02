@@ -20,7 +20,7 @@ For each source of data, provide the following information:
 -   How many features (columns) are in the data?
 -   What questions (from above) can be answered using the data in this dataset?
 
-### Data 1 - Suicide Mortality by State
+### Dataset 1 - Suicide Mortality by State
 
 https://www.cdc.gov/nchs/pressroom/sosmap/suicide-mortality/suicide.htm
 
@@ -29,10 +29,10 @@ There are 400 rows within this dataset from the CDC.
 There are 5 columns, but one is a URL and does not contain specific data about the state/year/suicide/death count
 This dataset could be merged with economic trends by year to answer how the state of economy influences suicide rates. Other datasets merged with this one could show causal factors for suicide propensity such as technological access, GDP, homelessness, and much more.
 
-### Data 2
+### Dataset 2
 
 put answers here
 
-### Data 3
+### Dataset 3
 
 put answers here
