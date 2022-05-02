@@ -19,3 +19,15 @@ For each source of data, provide the following information:
 -   How many observations (rows) are in your data? 
 -   How many features (columns) are in the data?
 -   What questions (from above) can be answered using the data in this dataset?
+
+### Data 1
+
+put answers here
+
+### Data 2
+
+put answers here
+
+### Data 3
+
+put answers here
