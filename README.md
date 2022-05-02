@@ -29,7 +29,7 @@ There are 400 rows within this dataset from the CDC.
 There are 5 columns, but one is a URL and does not contain specific data about the state/year/suicide/death count
 This dataset could be merged with economic trends by year to answer how the state of economy influences suicide rates. Other datasets merged with this one could show causal factors for suicide propensity such as technological access, GDP, homelessness, and much more.
 
-### Dataset 2 -Suicide in the Twenty-First Century
+### Dataset 2 - Suicide in the Twenty-First Century
 
 https://www.kaggle.com/code/szamil/suicide-in-the-twenty-first-century/data
 
