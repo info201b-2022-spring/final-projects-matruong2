@@ -5,15 +5,16 @@ Em Tallman, Jirat Rymparsurat, Martin Truong, Tyler Takeuchi
 ## Domain of Interest
 
 -   Why are you interested in this field/domain?
+
     This is something that is prevalent in the world and does not seem to be going away anytime soon. Also we have two psychology majors.
     
 -   What other examples of data driven project have you found related to this domain (share at least 3)?
     1. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6068947/
-      This shows suicide rates and the epidemiology of it.
+      - This shows suicide rates and the epidemiology of it.
     2. https://www.frontiersin.org/articles/10.3389/fpsyt.2018.00540/full
-      This shows suicide risks in relation to youth. 
+      - This shows suicide risks in relation to youth. 
     3. https://jech.bmj.com/content/57/8/594
-      This shows unemployment rates and suicide looking ot see if the data can show causation instead of correlation.
+      - This shows unemployment rates and suicide looking to see if the data can show causation instead of correlation.
 
 -   What data-driven questions do you hope to answer about this domain (share at least 3)?
 
@@ -51,4 +52,6 @@ We can answer the amount of suicides by year, sex, and age.
 
 https://www.kaggle.com/datasets/twinkle0705/mental-health-and-suicide-rates?select=Human+Resources.csv
 
+This dataset was collected by who, but was organized by Twinkle Khanna. For the human resources part, it shows the type of healthcare worker and the amount of them working per 100,000 population for each country in the data.
 There are 6 features and 107 observations.
+This dataset can be merged with the previous datasets to show factors of how the amount of resources is related to suicide rates.
