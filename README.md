@@ -16,6 +16,10 @@ Em Tallman, Jirat Rymparsurat, Martin Truong, Tyler Takeuchi
       This shows unemployment rates and suicide looking ot see if the data can show causation instead of correlation.
 
 -   What data-driven questions do you hope to answer about this domain (share at least 3)?
+    1. How has time influenced propensities in age ranges to commit suicide?
+    2. Can the amount of mental health resources affect suicicde rates?
+    3. What ages/demographics seem to hav ehte most suicides?
+
 
 ## Finding Data
 
