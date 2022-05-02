@@ -38,9 +38,8 @@ The data talks about world suicide rates.
 There are 6 features and 43776 observations.
 We can answer teh amount of suicides by year, sex, and age. 
 
-### Dataset 3
+### Dataset 3 - Mental Health Resources
 
 https://www.kaggle.com/datasets/twinkle0705/mental-health-and-suicide-rates?select=Human+Resources.csv
-
 
 There are 6 features and 107 observations.
