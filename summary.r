@@ -79,3 +79,24 @@ min_rate_by_year <- select(
     US_data_grp_state),
   STATE, RATE, YEAR
 )
+
+a <- summarise(group_by(WHO_DATA_US, year))
+
+b <- summarise(group_by(US_data, YEAR)) %>%
+  rename(year = YEAR)
+
+e <- summarise(group_by(HR_US_data, Year)) %>%
+  rename(year = Year)
+
+ab <- merge(x = a, y = b, all.x = TRUE)
+
+unique_years <- merge(x = ab, y = e, all.x = TRUE)
+
+
+#Making the list, Checking it twice
+
+summary <- list()
+summary$total_observations <- nrow(HR_US_data) + nrow(US_data) + nrow(WHO_DATA_US)
+summary$no_unique_years_observed <- nrow(unique_years)
+
+
