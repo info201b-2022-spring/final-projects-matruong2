@@ -92,11 +92,21 @@ ab <- merge(x = a, y = b, all.x = TRUE)
 
 unique_years <- merge(x = ab, y = e, all.x = TRUE)
 
+a <- group_by(WHO_DATA_US, year)
+
+b <- group_by(US_data, YEAR)
+
+e <- group_by(HR_US_data, Year)
+
+
 
 #Making the list, Checking it twice
 
 summary <- list()
-summary$total_observations <- nrow(HR_US_data) + nrow(US_data) + nrow(WHO_DATA_US)
-summary$no_unique_years_observed <- nrow(unique_years)
+summary$num_of_unique_years_observed <- nrow(unique_years) #fix this
+summary$years_with_data <- unique_years[["year"]] #fix this
 
+#maxs and mins found earlier
+#most common observations for the WHO data for age and sex
+#get rid of years from the WHO data that aren't in the us data
 
