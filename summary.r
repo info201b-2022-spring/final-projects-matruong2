@@ -1,22 +1,52 @@
 library(dplyr)
 library(tidyr)
 
-#Sorting/Cleaning
-HR_data <- read.csv("C:/Users/nnotc/Desktop/info_stuff/final-projects-matruong2/data/Human_Resources.csv")
+#Sorting/Cleaning------------------------------------------------------------
+#I filtered down the US and WHO data to only the years they both have data
+#for, but we don't have to keep this. 
+HR_data <- filter(
+  read.csv("C:/Users/nnotc/Desktop/info_stuff/final-projects-matruong2/data/Human_Resources.csv"),
+  Country == "United States of America") %>%
+  rename(year = Year)
+  
 
-US_data <- read.csv("C:/Users/nnotc/Desktop/info_stuff/final-projects-matruong2/data/suicide_mortality.csv")
+US_data <- read.csv("C:/Users/nnotc/Desktop/info_stuff/final-projects-matruong2/data/suicide_mortality.csv") %>%
+  filter(YEAR == 2005 | YEAR == 2014 | YEAR == 2015 | 
+           YEAR == 2016)
 
-WHO_data <- read.csv("C:/Users/nnotc/Desktop/info_stuff/final-projects-matruong2/data/who_suicide_statistics.csv")
-
-HR_US_data <- filter(HR_data, Country == "United States of America")
-
-WHO_DATA_US <- filter(WHO_data, country == "United States of America")
+WHO_data <- filter(
+  read.csv("C:/Users/nnotc/Desktop/info_stuff/final-projects-matruong2/data/who_suicide_statistics.csv"),
+  country == "United States of America") %>%
+  filter(year == 2005 | year == 2014 | year == 2015 | 
+           year == 2016 | year == 2017 | year == 2018 | 
+           year == 2019 | year == 2020)
 
 US_data_grp_state <- group_by(US_data, STATE)
 
-US_data_grp_year <- group_by(US_data, YEAR)
+US_data_grp_year <- group_by(US_data, YEAR) #%>%
+  #summarise() %>%
+  #print()
 
-min_deaths_by_state <- select(
+WHO_2016 <- WHO_data %>%
+  filter(year == 2016) 
+
+US_2016 <- US_data %>%
+  filter(YEAR == 2016) %>%
+  rename(year = YEAR)
+
+
+
+#Making the list, Checking it twice------------------------------------------------------------
+
+summary <- list()
+summary$num_of_unique_years_observed <- nrow(
+  summarise(US_data_grp_year)
+) 
+summary$unqiue_years_observed <- summarise(US_data_grp_year) 
+  summary$unqiue_years_observed <- summary$unqiue_years_observed[["YEAR"]]
+#US data stats------------------------------------------------------------
+  #I left these as dataframe in the list, can change later
+summary$min_deaths_by_state <- select(
   merge(
     summarise(
       US_data_grp_state, DEATHS = min(DEATHS)), 
@@ -24,7 +54,7 @@ min_deaths_by_state <- select(
   STATE, DEATHS, YEAR
 )
 
-min_deaths_by_year <- select(
+summary$min_deaths_by_year <- select(
   merge(
     summarise(
       US_data_grp_year, DEATHS = min(DEATHS)), 
@@ -32,7 +62,7 @@ min_deaths_by_year <- select(
   STATE, DEATHS, YEAR
 )
 
-min_rate_by_state <- select(
+summary$min_rate_by_state <- select(
   merge(
     summarise(
       US_data_grp_state, RATE = min(RATE)), 
@@ -40,7 +70,7 @@ min_rate_by_state <- select(
   STATE, RATE, YEAR
 )
 
-min_rate_by_year <- select(
+summary$min_rate_by_year <- select(
   merge(
     summarise(
       US_data_grp_year, RATE = min(RATE)), 
@@ -48,7 +78,7 @@ min_rate_by_year <- select(
   STATE, RATE, YEAR
 )
 
-max_deaths_by_state <- select(
+summary$max_deaths_by_state <- select(
   merge(
     summarise(
       US_data_grp_state, DEATHS = max(DEATHS)), 
@@ -56,7 +86,7 @@ max_deaths_by_state <- select(
   STATE, DEATHS, YEAR
 )
 
-min_deaths_by_year <- select(
+summary$min_deaths_by_year <- select(
   merge(
     summarise(
       US_data_grp_year, DEATHS = max(DEATHS)), 
@@ -64,7 +94,7 @@ min_deaths_by_year <- select(
   STATE, DEATHS, YEAR
 )
 
-max_rate_by_state <- select(
+summary$max_rate_by_state <- select(
   merge(
     summarise(
       US_data_grp_state, RATE = max(RATE)), 
@@ -72,41 +102,40 @@ max_rate_by_state <- select(
   STATE, RATE, YEAR
 )
 
-min_rate_by_year <- select(
+summary$min_rate_by_year <- select(
   merge(
     summarise(
       US_data_grp_year, RATE = max(RATE)), 
     US_data_grp_state),
   STATE, RATE, YEAR
 )
+#WHO data stats------------------------------------------------------------
+  #Did not distinguish by year, can do later
+summary$most_common_sex <- names(
+  which.max(
+    table(WHO_data$sex)
+  )
+)
 
-a <- summarise(group_by(WHO_DATA_US, year))
+summary$most_common_age <- names(
+  which.max(
+    table(WHO_data$age)
+  )
+)
+#HR data stats------------------------------------------------------------
+summary$psychiatrists_per_100k <- round(
+  HR_data$Psychiatrists[[1]]
+)
 
-b <- summarise(group_by(US_data, YEAR)) %>%
-  rename(year = YEAR)
+summary$nurses_per_100k <- round(
+  HR_data$Nurses[[1]]
+)
 
-e <- summarise(group_by(HR_US_data, Year)) %>%
-  rename(year = Year)
+summary$soc_workers_per_100k <- round(
+  HR_data$Social_workers[[1]]
+)
 
-ab <- merge(x = a, y = b, all.x = TRUE)
-
-unique_years <- merge(x = ab, y = e, all.x = TRUE)
-
-a <- group_by(WHO_DATA_US, year)
-
-b <- group_by(US_data, YEAR)
-
-e <- group_by(HR_US_data, Year)
-
-
-
-#Making the list, Checking it twice
-
-summary <- list()
-summary$num_of_unique_years_observed <- nrow(unique_years) #fix this
-summary$years_with_data <- unique_years[["year"]] #fix this
-
-#maxs and mins found earlier
-#most common observations for the WHO data for age and sex
-#get rid of years from the WHO data that aren't in the us data
+summary$psychologists_per_100k <- round(
+  HR_data$Psychologists[[1]]
+)
 
