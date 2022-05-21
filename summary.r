@@ -5,17 +5,17 @@ library(tidyr)
 #I filtered down the US and WHO data to only the years they both have data
 #for, but we don't have to keep this. 
 HR_data <- filter(
-  read.csv("C:/Users/nnotc/Desktop/info_stuff/final-projects-matruong2/data/Human_Resources.csv"),
+  read.csv("data/Human_Resources.csv"),
   Country == "United States of America") %>%
   rename(year = Year)
   
 
-US_data <- read.csv("C:/Users/nnotc/Desktop/info_stuff/final-projects-matruong2/data/suicide_mortality.csv") %>%
+US_data <- read.csv("data/suicide_mortality.csv") %>%
   filter(YEAR == 2005 | YEAR == 2014 | YEAR == 2015 | 
            YEAR == 2016)
 
 WHO_data <- filter(
-  read.csv("C:/Users/nnotc/Desktop/info_stuff/final-projects-matruong2/data/who_suicide_statistics.csv"),
+  read.csv("data/who_suicide_statistics.csv"),
   country == "United States of America") %>%
   filter(year == 2005 | year == 2014 | year == 2015 | 
            year == 2016 | year == 2017 | year == 2018 | 
