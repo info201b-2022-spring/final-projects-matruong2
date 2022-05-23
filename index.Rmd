@@ -18,13 +18,12 @@ Our exploratory analysis will try to answer ...
 ## Summary Information
 
 ```{r summary}
-#print(summary)
+print(summary)
 # select which values we want to show since showing the entire table takes up
 # a lot of space
 ```
 
-Some values that we calculated are ...
-These values show ...
+Some values that we calculated are ... These values show ...
 
 ## Table of Aggregated Data
 
@@ -53,5 +52,3 @@ These values show ...
 # code to show chart
 
 ```
-
-

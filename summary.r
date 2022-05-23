@@ -1,5 +1,6 @@
 library(dplyr)
 library(tidyr)
+library(stringr)
 
 #Sorting/Cleaning------------------------------------------------------------
 #I filtered down the US and WHO data to only the years they both have data
@@ -47,8 +48,8 @@ summary$num_of_unique_years_observed <- nrow(
 summary$unqiue_years_observed <- summarise(US_data_grp_year) 
   summary$unqiue_years_observed <- summary$unqiue_years_observed[["YEAR"]]
 #US data stats------------------------------------------------------------
-  #I left these as dataframe in the list, can change later
-summary$min_deaths_by_state <- select(
+
+min_deaths_by_state <- select(
   merge(
     summarise(
       US_data_grp_state, DEATHS = min(DEATHS)), 
@@ -56,7 +57,7 @@ summary$min_deaths_by_state <- select(
   STATE, DEATHS, YEAR
 )
 
-summary$min_deaths_by_year <- select(
+min_deaths_by_year <- select(
   merge(
     summarise(
       US_data_grp_year, DEATHS = min(DEATHS)), 
@@ -64,7 +65,7 @@ summary$min_deaths_by_year <- select(
   STATE, DEATHS, YEAR
 )
 
-summary$min_rate_by_state <- select(
+min_rate_by_state <- select(
   merge(
     summarise(
       US_data_grp_state, RATE = min(RATE)), 
@@ -72,7 +73,7 @@ summary$min_rate_by_state <- select(
   STATE, RATE, YEAR
 )
 
-summary$min_rate_by_year <- select(
+min_rate_by_year <- select(
   merge(
     summarise(
       US_data_grp_year, RATE = min(RATE)), 
@@ -80,7 +81,7 @@ summary$min_rate_by_year <- select(
   STATE, RATE, YEAR
 )
 
-summary$max_deaths_by_state <- select(
+max_deaths_by_state <- select(
   merge(
     summarise(
       US_data_grp_state, DEATHS = max(DEATHS)), 
@@ -88,7 +89,7 @@ summary$max_deaths_by_state <- select(
   STATE, DEATHS, YEAR
 )
 
-summary$min_deaths_by_year <- select(
+min_deaths_by_year <- select(
   merge(
     summarise(
       US_data_grp_year, DEATHS = max(DEATHS)), 
@@ -96,7 +97,7 @@ summary$min_deaths_by_year <- select(
   STATE, DEATHS, YEAR
 )
 
-summary$max_rate_by_state <- select(
+max_rate_by_state <- select(
   merge(
     summarise(
       US_data_grp_state, RATE = max(RATE)), 
@@ -104,7 +105,7 @@ summary$max_rate_by_state <- select(
   STATE, RATE, YEAR
 )
 
-summary$min_rate_by_year <- select(
+min_rate_by_year <- select(
   merge(
     summarise(
       US_data_grp_year, RATE = max(RATE)), 
