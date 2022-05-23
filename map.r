@@ -21,24 +21,15 @@ average_rates <- US_data %>%
 average_rates
 
 # shows average death rates per year
-plot_usmap(data = average_rates, values = "avg_rate") +
+avg_rate_map <- plot_usmap(data = average_rates, values = "avg_rate") +
   labs(title = "Average Death Rates by State per year",
        subtitle = "Data from 2005, 2014-2020") +
   scale_fill_continuous(low = "white", high = "purple3")
+avg_rate_map
 
 # shows average total deaths per year
-plot_usmap(data = average_rates, values = "avg_death") +
+avg_death_map <- plot_usmap(data = average_rates, values = "avg_death") +
   labs(title = "Average Total Deaths by State per year",
        subtitle = "Data from 2005, 2014-2020") +
   scale_fill_continuous(low = "white", high = "purple3")
-
-# The purpose of including the 2 maps is to compare the average death rate by 
-# state per year to the average total deaths per year. This shows how a higher
-# average death rate from suicide does not correlate to a higher average total 
-# death rate. The reason for this is that states with a lower population will
-# have a higher average suicide death rate compared to states with a higher 
-# population because if they have the same amount of total deaths from suicide,
-# then the state with the lower population will have a higher death rate.
-# For example, California has the highest average total death, but has one of
-# the lowest average death rates by suicide since it has one of the highest
-# state population in the country.
+avg_death_map
