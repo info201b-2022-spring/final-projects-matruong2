@@ -6,7 +6,7 @@ library(stringr)
 library(hrbrthemes)
 
 #Data Cleaning
-WorldSuicide <- read_csv("~/who_suicide_statistics.csv")
+WorldSuicide <- read_csv("data/who_suicide_statistics.csv")
 
 suicidebyyearUSA <- filter(
   WorldSuicide,
