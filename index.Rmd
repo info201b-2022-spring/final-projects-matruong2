@@ -1,0 +1,57 @@
+---
+title: "Final Project Exploratory Data Analysis"
+author: "Em Tallman, Jirat Rymparsurat, Martin Truong, Tyler Takeuchi"
+output: html_document
+date: "5/22/22"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("knitr")
+source("summary.r")
+```
+
+## Introduction
+
+Our exploratory analysis will try to answer ...
+
+## Summary Information
+
+```{r summary}
+#print(summary)
+# select which values we want to show since showing the entire table takes up
+# a lot of space
+```
+
+Some values that we calculated are ...
+These values show ...
+
+## Table of Aggregated Data
+
+```{r}
+# code to show table here
+
+```
+
+### Chart 1 -
+
+```{r}
+# code to show chart
+
+```
+
+### Chart 2 -
+
+```{r}
+# code to show chart
+
+```
+
+### Chart 3 -
+
+```{r}
+# code to show chart
+
+```
+
+
