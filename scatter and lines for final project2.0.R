@@ -29,7 +29,7 @@ print(suicidebyyearUSA)
 
 ggplot(suicidebyyearUSA, aes(x = year, y = suicides_no)) +
   geom_point() +
-  labs(x="Years", y="No.of Suicides", title = "jirat smells") +
+  labs(x="Years", y="No.of Suicides", title = "No. of Suicides By Year") +
   geom_line(color="gray28") +
   geom_point(shape=23, color="#000000", fill="#261bcc", size=4) 
   
