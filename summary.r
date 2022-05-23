@@ -159,3 +159,5 @@ summary$psychologists_per_100k <- round(
   HR_data$Psychologists[[1]]
 )
 
+
+
