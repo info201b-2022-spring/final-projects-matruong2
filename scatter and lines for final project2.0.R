@@ -33,5 +33,6 @@ scatterline <- ggplot(suicidebyyearUSA, aes(x = year, y = suicides_no)) +
   geom_line(color="gray28") +
   geom_point(shape=23, color="#000000", fill="#261bcc", size=4) +
   theme_ipsum()
+
   
 print(scatterline)

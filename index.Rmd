@@ -9,12 +9,16 @@ date: "5/22/22"
 knitr::opts_chunk$set(echo = TRUE)
 library("knitr")
 source("summary.r")
+source("scatter and lines for final project2.0.R")
+source("State Rate Chart.R")
 source("map.r")
 ```
 
 ## Introduction
 
-Our exploratory analysis will try to answer ...
+Our exploratory analysis will try to answer "How much has suicide changed through the years?", "What is the amount of suicide percent to actual deaths?", and "What states have the highest rates of suicide?"
+
+We are focusing mostly on suicides in relation to other data.
 
 ## Summary Information
 
@@ -40,12 +44,32 @@ Looking through our data, we found that the most common age group to commit suic
 
 ```
 
-### Chart 2 -
+### Chart 2 - Number of Suicides Per year (2000-2015)
 
 The purpose of including this scatter plot with lines is to show the change over years. The data shows an increase as the years go on. This could be due to the increase in data collection capabilities, or just a changing social world with more internet access as well. Also with the increase in internet access it also means increase in information.
 
 ```{r echo=FALSE}
+<<<<<<< HEAD
+
+suicidebyyearUSA <- filter(
+  WorldSuicide,
+  country == "United States of America") %>%
+  filter(year >= 2000)%>% 
+  group_by(year) %>% 
+  summarize(suicides_no = sum(suicides_no))%>%
+  na.omit(WorldSuicide)
+
+scatterline <- ggplot(suicidebyyearUSA, aes(x = year, y = suicides_no)) +
+  geom_point() +
+  labs(x="Years", y="No.of Suicides", title = "No. of Suicides By Year") +
+  geom_line(color="gray28") +
+  geom_point(shape=23, color="#000000", fill="#261bcc", size=4)
+
+  
+print(scatterline)
+=======
 scatterline
+>>>>>>> 6104fe5b0c8ad4809c38d195f8c95d56f7e36f04
 
 ```
 
