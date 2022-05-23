@@ -56,6 +56,14 @@ min_deaths_by_state <- select(
         US_data_grp_state),
   STATE, DEATHS, YEAR
 )
+  
+min_deaths_by_state$DEATHS <- strtoi(min_deaths_by_state$DEATHS)
+
+lowest_deaths_state_year <- min_deaths_by_state %>%
+  arrange(DEATHS)
+  
+summary$lowest_min_deaths_state <- lowest_deaths_state_year$STATE[1]
+summary$lowest_min_deaths_year <- lowest_deaths_state_year$YEAR[1]
 
 min_deaths_by_year <- select(
   merge(
@@ -112,6 +120,15 @@ min_rate_by_year <- select(
     US_data_grp_state),
   STATE, RATE, YEAR
 )
+
+max_deaths_by_state$DEATHS <- strtoi(max_deaths_by_state$DEATHS)
+
+highest_deaths_state_year <- max_deaths_by_state %>%
+  arrange(-desc(DEATHS))
+
+summary$highest_max_deaths_state <- highest_deaths_state_year$STATE[1]
+summary$highest_max_deaths_year <- highest_deaths_state_year$YEAR[1]
+
 #WHO data stats------------------------------------------------------------
   #Did not distinguish by year, can do later
 summary$most_common_sex <- names(
