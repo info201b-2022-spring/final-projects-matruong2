@@ -18,13 +18,13 @@ Our exploratory analysis will try to answer ...
 
 ## Summary Information
 
-```{r summary}
-print(summary)
+```{r summary, include=FALSE}
+#print(summary)
 # select which values we want to show since showing the entire table takes up
 # a lot of space
 ```
 
-Some values that we calculated are ... These values show ...
+Looking through our data, we found that the most common age group to commit suicide was `r summary$most_common_age` and the most common sex was `r summary$most_common_sex`. Looking at all suicide minimums per state (grouped by year), we found that the absolute lowest minimum came from `r summary$lowest_min_deaths_state` (Vermont), in the year `r summary$lowest_min_deaths_year`. Likewise, looking at maximums per state, we found that the absolute highest maximum came from `r summary$highest_max_deaths_state` (Rhode Island) in the year `r summary$highest_max_deaths_year`. In the case of human resource workers, in the year 2016 we found that there were (per 100k individuals): `r summary$psychiatrists_per_100k` psychiatrists, `r summary$psychologists_per_100k` psychologists, `r summary$soc_workers_per_100k` social workers, and `r summary$nurses_per_100k` nurses. 
 
 ## Table of Aggregated Data
 
