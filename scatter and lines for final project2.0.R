@@ -6,11 +6,7 @@ library(stringr)
 library(hrbrthemes)
 
 #Data Cleaning
-<<<<<<< HEAD
 WorldSuicide <- read_csv("who_suicide_statistics.csv")
-=======
-WorldSuicide <- read_csv("data/who_suicide_statistics.csv")
->>>>>>> dca59663891c0a4aa8df47c877a0a3fe3f86d855
 
 suicidebyyearUSA <- filter(
   WorldSuicide,
@@ -33,9 +29,5 @@ ggplot(suicidebyyearUSA, aes(x = year, y = suicides_no)) +
   geom_point() +
   labs(x="Years", y="No.of Suicides", title = "jirat smells") +
   geom_line(color="gray28") +
-<<<<<<< HEAD
   geom_point(shape=23, color="#000000", fill="#261bcc", size=4) 
   
-=======
-  geom_point(shape=23, color="#000000", fill="#261bcc", size=4)
->>>>>>> dca59663891c0a4aa8df47c877a0a3fe3f86d855
