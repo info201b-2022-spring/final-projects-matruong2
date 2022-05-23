@@ -42,8 +42,10 @@ Some values that we calculated are ... These values show ...
 
 ### Chart 2 -
 
-```{r}
-# code to show chart
+The purpose of including this scatter plot with lines is to show the change over years. The data shows an increase as the years go on. This could be due to the increase in data collection capabilities, or just a changing social world with more internet access as well. Also with the increase in internet access it also means increase in information.
+
+```{r echo=FALSE}
+scatterline
 
 ```
 
