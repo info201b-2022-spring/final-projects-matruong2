@@ -13,6 +13,8 @@ HR_data <- filter(
 US_data <- read.csv("data/suicide_mortality.csv") %>%
   filter(YEAR == 2005 | YEAR == 2014 | YEAR == 2015 | 
            YEAR == 2016)
+  US_data$DEATHS <- str_remove_all(US_data$DEATHS, ",") 
+    
 
 WHO_data <- filter(
   read.csv("data/who_suicide_statistics.csv"),
