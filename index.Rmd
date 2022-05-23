@@ -11,6 +11,7 @@ library("knitr")
 source("summary.r")
 source("scatter and lines for final project2.0.R")
 source("State Rate Chart.R")
+source("Table.r")
 source("map.r")
 ```
 
@@ -34,17 +35,21 @@ We are focusing mostly on suicides in relation to other data.
 
 Looking through our data, we found that the most common age group to commit suicide was `r summary$most_common_age` and the most common sex was `r summary$most_common_sex`. Looking at all suicide minimums per state (grouped by year), we found that the absolute lowest minimum came from `r summary$lowest_min_deaths_state` (Vermont), in the year `r summary$lowest_min_deaths_year`. Likewise, looking at maximums per state, we found that the absolute highest maximum came from `r summary$highest_max_deaths_state` (Rhode Island) in the year `r summary$highest_max_deaths_year`. In the case of human resource workers, in the year 2016 we found that there were (per 100k individuals): `r summary$psychiatrists_per_100k` psychiatrists, `r summary$psychologists_per_100k` psychologists, `r summary$soc_workers_per_100k` social workers, and `r summary$nurses_per_100k` nurses. 
 
-## Table of Aggregated Data
+## Table of Aggregated Data - Table of minimum and maximum deaths by state/year
+
+This table takes the summary information of grouped states. This table shows trends based on time while also listing the states which demosntrates the state trends and if those have any correlation with the years. Grouping by state normalizes the data because one state's extreme will vary greatly from another state's but maybe not as much as its own extreme. This table provides insight for each state and shows how and if the context of time played a role in the severity of the extreme value. 
 
 ```{r}
-# code to show table here
+State_Table
 
 ```
 
-### Chart 1 -
+### Chart 1 - Death rate per 100,000 by state (Circular barplot)
 
-```{r}
-# code to show chart
+The purpose of this chart is to visualize the death rate by state. This allows the reader to compare the rates between states through comparing the length of each bar. Along with the bars are rates of the respective states to accurately convey the length of the bar rather than purely relying on visual comparison. The circular barplot made the most sense in this scenario because a normal barplot would have 50 variables on a single axis which would not allow for a reader to see the whole chart. 
+
+```{r echo=FALSE}
+p
 
 ```
 

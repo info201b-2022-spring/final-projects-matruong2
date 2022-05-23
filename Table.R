@@ -2,6 +2,7 @@ library(readr)
 library(ggplot2)
 library(dplyr)
 library(tidyverse)
+library(data.table)
 
 US_data <- read.csv("data/suicide_mortality.csv")
 
