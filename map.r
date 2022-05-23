@@ -21,14 +21,15 @@ average_rates <- US_data %>%
 average_rates
 
 # shows average death rates per year
-plot_usmap(data = average_rates, values = "avg_rate") +
+avg_rate_map <- plot_usmap(data = average_rates, values = "avg_rate") +
   labs(title = "Average Death Rates by State per year",
        subtitle = "Data from 2005, 2014-2020") +
-  scale_fill_continuous(low = "white", high = "chartreuse4")
+  scale_fill_continuous(low = "white", high = "purple3")
+avg_rate_map
 
-# shows average deaths per year
-plot_usmap(data = average_rates, values = "avg_death") +
+# shows average total deaths per year
+avg_death_map <- plot_usmap(data = average_rates, values = "avg_death") +
   labs(title = "Average Total Deaths by State per year",
        subtitle = "Data from 2005, 2014-2020") +
-  scale_fill_continuous(low = "white", high = "chartreuse4")
-
+  scale_fill_continuous(low = "white", high = "purple3")
+avg_death_map
