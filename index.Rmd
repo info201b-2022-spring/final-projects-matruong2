@@ -16,7 +16,11 @@ source("map.r")
 
 ## Introduction
 
-Our exploratory analysis will try to answer "How much has suicide changed through the years?", "What is the amount of suicide percent to actual deaths?", and "What states have the highest rates of suicide?"
+Our exploratory analysis will try to answer these questions: 
+
+* "How much has suicide changed through the years?" 
+* "What is the amount of suicide percent to actual deaths?"
+* "What states have the highest rates of suicide?"
 
 We are focusing mostly on suicides in relation to other data.
 

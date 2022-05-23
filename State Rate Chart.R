@@ -37,5 +37,4 @@ p <- ggplot(data = US_data_grp_state, aes(x=STATE, y=RATE)) +
   coord_polar(start = 0) +
   
   geom_text(data=US_data_grp_state, aes(x = STATE, y = RATE, label = RATE), color="black", fontface="bold",alpha=0.6, size=2.5, angle= label_data$angle, inherit.aes = FALSE ) 
-coord_polar(start = 0)
 
