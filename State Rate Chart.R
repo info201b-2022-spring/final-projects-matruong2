@@ -32,14 +32,17 @@ label_data$angle<-ifelse(angle < -90, angle+180, angle)
 
 
 # Start the plot
-p <- ggplot(data = US_data_grp_state, aes(x=as.factor(STATE), y=RATE)) +       # Note that id is a factor. If x is numeric, there is some space between the first bar
+p <- ggplot(data = US_data_grp_state, aes(x=STATE, y=RATE)) +       # Note that id is a factor. If x is numeric, there is some space between the first bar
   
   # This add the bars with a blue color
   geom_bar(stat="identity", fill=alpha("skyblue", 0.7)) +
+  
+  ggtitle("Deaths per 100,000")+
   
   # This makes the coordinate polar instead of cartesian.
   coord_polar(start = 0) +
   
   # Add the labels, using the label_data dataframe that we have created before
-  geom_text(data=US_data_grp_state, aes(x=STATE, y=RATE, label=STATE, hjust=hjust), color="black", fontface="bold",alpha=0.6, size=2.5, angle= label_data$angle, inherit.aes = FALSE ) 
+  geom_text(data=US_data_grp_state, aes(x = STATE, y = RATE, label = RATE), color="black", fontface="bold",alpha=0.6, size=2.5, angle= label_data$angle, inherit.aes = FALSE ) 
 coord_polar(start = 0)
+
