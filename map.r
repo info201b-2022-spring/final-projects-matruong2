@@ -18,6 +18,8 @@ average_rates
 
 # shows average rates over all the data in the state across multiple years
 plot_usmap(data = average_rates, values = "avg_rate") +
-  scale_fill_continuous(low = "white", high = "red")
+  labs(title = "Average Death Rates by State",
+       subtitle = "Data from 2005, 2014-2016") +
+  scale_fill_continuous(low = "white", high = "chartreuse4")
 
 
