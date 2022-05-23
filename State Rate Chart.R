@@ -56,3 +56,4 @@ p <- ggplot(data = US_data_grp_state, aes(x=as.factor(US_data_grp_state$STATE), 
   geom_text(data=US_data_grp_state, aes(x=US_data_grp_state$STATE, y=US_data_grp_state$RATE, label=individual, hjust=hjust), color="black", fontface="bold",alpha=0.6, size=2.5, angle= label_data$angle, inherit.aes = FALSE ) 
 coord_polar(start = 0)
 
+print(p)

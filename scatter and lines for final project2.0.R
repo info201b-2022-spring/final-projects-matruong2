@@ -7,7 +7,7 @@ library(hrbrthemes)
 
 #Data Cleaning
 
-WorldSuicide <- read_csv("who_suicide_statistics.csv")
+WorldSuicide <- read_csv("data/who_suicide_statistics.csv")
 
 
 suicidebyyearUSA <- filter(
@@ -27,9 +27,11 @@ print(suicidebyyearUSA)
 
 #R-graph-gallery used to create graph of scatter+line
 
-ggplot(suicidebyyearUSA, aes(x = year, y = suicides_no)) +
+scatterline <- ggplot(suicidebyyearUSA, aes(x = year, y = suicides_no)) +
   geom_point() +
   labs(x="Years", y="No.of Suicides", title = "No. of Suicides By Year") +
   geom_line(color="gray28") +
-  geom_point(shape=23, color="#000000", fill="#261bcc", size=4) 
+  geom_point(shape=23, color="#000000", fill="#261bcc", size=4) +
+  theme_ipsum()
   
+print(scatterline)
