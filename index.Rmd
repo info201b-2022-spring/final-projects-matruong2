@@ -49,7 +49,6 @@ Some values that we calculated are ... These values show ...
 The purpose of including this scatter plot with lines is to show the change over years. The data shows an increase as the years go on. This could be due to the increase in data collection capabilities, or just a changing social world with more internet access as well. Also with the increase in internet access it also means increase in information.
 
 ```{r echo=FALSE}
-<<<<<<< HEAD
 
 suicidebyyearUSA <- filter(
   WorldSuicide,
@@ -67,9 +66,7 @@ scatterline <- ggplot(suicidebyyearUSA, aes(x = year, y = suicides_no)) +
 
   
 print(scatterline)
-=======
-scatterline
->>>>>>> 6104fe5b0c8ad4809c38d195f8c95d56f7e36f04
+
 
 ```
 
