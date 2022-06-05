@@ -23,7 +23,7 @@ first_tab <-
 
 second_tab <- 
   tabPanel( 
-    "Tab Two", 
+    "Suicides by Year/Gender", 
     fluidPage( 
       h1("Whatever is gonna go here"),
       p("more interactive stuff")
