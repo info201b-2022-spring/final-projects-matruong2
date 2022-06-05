@@ -1,7 +1,8 @@
 
-
 library(shiny)
 library(ggplot2)
+cdc_data <- read.csv("data/suicide_mortality.csv")
+cdc_data$DEATHS <- as.numeric(cdc_data$DEATHS)
 
 intro_page <- 
   tabPanel(
@@ -17,7 +18,18 @@ first_tab <-
     "Tab One",              
     fluidPage(                
       h1("Whatever is gonna go here"),
-      p("more interactive stuff")
+      p("more interactive stuff"),
+      sidebarLayout(
+        sidebarPanel(
+          h5("Controls"),
+          selectInput(inputId = "year",
+                      label = "Choose Year:",
+                      choices = cdc_data$YEAR)
+        ),
+        mainPanel(
+          plotlyOutput(outputId = "rate_plot")
+        )
+      )
     )
   ) 
 
@@ -71,6 +83,28 @@ ui <- (                         ## call this website my website
 # Define server logic required to draw a histogram
 server <- function(input, output) {
 
+  output$rate_plot <- renderPlotly({
+    filtered_cdc_data <- cdc_data %>%
+      filter(YEAR == input$year) %>%
+      group_by(STATE) %>%
+      summarize(RATE = mean(RATE), YEAR, DEATHS)
+    fig <- plot_ly(
+      data = filtered_cdc_data,
+      x = ~STATE,
+      y = ~RATE,
+      type = 'bar',
+      marker = list(color = "rgb(158,202,225)",
+                    line = list(color = "rgb(8,48,107)", width = 1.5))
+      )
+    fig <- fig %>% layout(title = "Sucides Rates by State",
+                          xaxis = list(title = "", tickangle = -45),
+                          yaxis = list(title = ""),
+                          margin = list(b = 100),
+                          barmode = 'group'
+    )
+    
+    
+  })
     
 }
 
