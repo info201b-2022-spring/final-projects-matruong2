@@ -211,7 +211,7 @@ third_tab <-
              states on the West side usually have the highest rates, which is 
              surprising because it was the states with the mid to lower
              populations that had higher suicide death rates compared to the
-             states with higher populations.")
+             states with higher populations with lower suicide death rates.")
           
         ),
         mainPanel(
