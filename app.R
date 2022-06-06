@@ -353,11 +353,7 @@ output$No_Of_Suicides <- renderPlotly({
   # server code for the map visualization
   make_map_df <- function(year) { 
     map_df <- US_data %>% 
-      filter(YEAR == year) #%>% 
-    #doesn't really do much since each year has only one piece of data
-    # could change so that avg_rate can be calculated from different year ranges
-    #group_by(state) %>% 
-    #summarize(avg_rate = mean(RATE, na.rm = TRUE)) 
+      filter(YEAR == year)
     return(map_df)
   }
   
