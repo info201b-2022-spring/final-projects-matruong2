@@ -105,10 +105,10 @@ first_tab <-
           over time?"),
           br(),
           h3("Findings:"),
-          h4("The overall average rate for all states from 2014-2020 was ______. The 
-          state with the highest over all average rate in this time was ______ with _____,
-          while the lowest of _____ belonged to ______. The year with the over all 
-          highest average was ____, while the lowest was _____.
+          h4("The overall average rate for all states from 2014-2020 was 16.01. The 
+          state with the highest over all average rate in this time was Wyoming with 26.53,
+          while the lowest of 7.93 belonged to New Jersey. The year with the over all 
+          highest average was 2017, while the lowest was 2014.
              ")
         ),
         mainPanel(
@@ -265,8 +265,8 @@ server <- function(input, output) {
       x = ~STATE,
       y = ~RATE,
       type = 'bar',
-      marker = list(color = "rgb(158,202,225)",
-                    line = list(color = "rgb(8,48,107)", width = 1.5))
+      marker = list(color = "rgb(98,121,184)",
+                    line = list(color = "rgb(255,93,115)", width = 1.5))
       )
     fig <- fig %>% layout(title = "Rates by State in a Year",
                           xaxis = list(title = "State", tickangle = -45),
@@ -287,7 +287,9 @@ server <- function(input, output) {
       x = ~YEAR,
       y = ~RATE,
       type = "scatter",
-      mode = "lines"
+      mode = "lines",
+      marker = list(color = "rgb(98,121,184)"),
+      line = list(color = "rgb(255,93,115)")
     )
       fig <- fig %>% layout(
         title = "Rates by State 2014 - 2020",
