@@ -207,7 +207,11 @@ third_tab <-
              doesn't reach 25, and the highest max rate is in 2020 since the bar
              is above 30. This doesn't mean that there's a linear relationship,
              but it does show that there's an overall slightly increasing trend
-             of the suicide death rate over the years.")
+             of the suicide death rate over the years. Throughout the years, the 
+             states on the West side usually have the highest rates, which is 
+             surprising because it was the states with the mid to lower
+             populations compared to other states in the west coast that had 
+             higher suicide death rates.")
           
         ),
         mainPanel(
@@ -359,7 +363,6 @@ output$No_Of_Suicides <- renderPlotly({
   
   output$map <- renderPlot({
     plot_title <- str_c("Death Rates by State in ", input$mapYear)
-    par(bg = "navyblue")
     plot_usmap(data = make_map_df(input$mapYear), values = "RATE") +
       labs(title = plot_title ) +
       theme_void() +
