@@ -285,11 +285,10 @@ server <- function(input, output) {
       x = ~STATE,
       y = ~RATE,
       type = 'bar',
-      marker = list(color = "rgb(98,121,184)",
-                    line = list(color = "rgb(255,93,115)", width = 1.5))
+      marker = list(color = "AFB4D4",
+                    line = list(color = "6279B8", width = 1.5))
     )
     fig <- fig %>% layout(title = "Rates by State in a Year",
-                          plot_bgcolor = "FCEFEF",
                           xaxis = list(title = "State", tickangle = -45),
                           yaxis = list(title = "Average Suicide Rate"),
                           margin = list(b = 100),
