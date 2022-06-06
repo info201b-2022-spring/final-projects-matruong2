@@ -188,6 +188,14 @@ third_tab <-
             over time. The dataset mainly has data from 2014-2020."),
           p("Use the slider to pick a year to display the map showing the death
             rates for each state"),
+          sliderInput(
+            inputId = "mapYear",
+            label = "Year",
+            min = min(US_data$YEAR),
+            max = max(US_data$YEAR),
+            value = min(US_data$YEAR), #I might change to double slider
+            step = 1
+          ),
           
           h3("Question:"),
           h4("What patterns are shown in how suicide death rates are changing over
@@ -199,16 +207,8 @@ third_tab <-
              doesn't reach 25, and the highest max rate is in 2020 since the bar
              is above 30. This doesn't mean that there's a linear relationship,
              but it does show that there's an overall slightly increasing trend
-             of the suicide death rate over the years."),
+             of the suicide death rate over the years.")
           
-          sliderInput(
-            inputId = "mapYear",
-            label = "Year",
-            min = min(US_data$YEAR),
-            max = max(US_data$YEAR),
-            value = min(US_data$YEAR), #I might change to double slider
-            step = 1
-          )
         ),
         mainPanel(
           plotOutput(outputId = "map")
@@ -230,20 +230,24 @@ summary_page <-
 
 
 # combine all pages, create ui
-ui <- (                         
-  fluidPage( 
+ui <- fluidPage( 
     theme = shinytheme("darkly"),
-    navbarPage (                
-      
+    tags$head(
+      tags$style(HTML("
+      @import url('https://fonts.googleapis.com/css2?family=Nuosu+SIL&display=swap');
+      body, h1, h2, h3, h4, h5 {
+        font-family: 'Nuosu SIL', serif;
+      }
+      "))
+    ),
+    navbarPage(
       "Suicide Mortality In The US: Between State Lines",
       intro_page,
       first_tab,
       second_tab,
       third_tab,
       summary_page
-      
     )
-  )
 )
 
 # Define server logic required to draw a histogram
@@ -355,9 +359,12 @@ output$No_Of_Suicides <- renderPlotly({
   
   output$map <- renderPlot({
     plot_title <- str_c("Death Rates by State in ", input$mapYear)
+    par(bg = "navyblue")
     plot_usmap(data = make_map_df(input$mapYear), values = "RATE") +
       labs(title = plot_title ) +
-      theme(plot.title = element_text(size=22)) +
+      theme_void() +
+      theme(plot.title = element_text(size=22),
+            panel.background = element_rect(fill = 'gray', colour = '#6279B8')) +
       scale_fill_continuous(low = "white", high = "purple3")
   })
   
