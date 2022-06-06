@@ -233,7 +233,11 @@ summary_page <-
       p("Wyoming having the highest rate of suicide supports the findings of the graphs/map 
         because it is not as densely populated and likely has a poorer infrastructure for 
         mental healthcare. In towns where the nearest grocery store is many miles away, the 
+<<<<<<< HEAD
+        nearest mental heathcare facility is likely even less accessible."),
+=======
         nearest mental healthcare facility is likely even less accessible."),
+>>>>>>> f2cbeb42d35cab5cf4605ef88a9e6699cd3c5afb
       p("A rather interesting finding was the sharp increase in suicide among the 35-54 year-old
          age group. This may be an underserved or overlooked demographic within mental health and
          suicide prevention."),
