@@ -252,14 +252,6 @@ summary_page <-
 # combine all pages, create ui
 ui <- fluidPage( 
   theme = shinytheme("darkly"),
-  tags$head(
-    tags$style(HTML("
-      @import url('https://fonts.googleapis.com/css2?family=Nuosu+SIL&display=swap');
-      body, h1, h2, h3, h4, h5 {
-        font-family: 'Nuosu SIL', serif;
-      }
-      "))
-  ),
   navbarPage(
     "Suicide Mortality In The US: Between State Lines",
     intro_page,
