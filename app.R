@@ -10,15 +10,15 @@ cdc_data <- read.csv("data/suicide_mortality.csv") %>%
   select(STATE, YEAR, RATE, DEATHS)
 cdc_data$DEATHS <- as.numeric(cdc_data$DEATHS)
 
-<<<<<<< HEAD
+
 WorldSuicide <- read_csv("data/who_suicide_statistics.csv")
 source("scatter and lines for final project2.0.R")
-=======
+
 US_data <- read.csv("data/suicide_mortality.csv")
 colnames(US_data)[2] <- "state"
 US_data <- US_data %>% 
   filter( YEAR != 2005)
->>>>>>> 7f80f4ece3d5643629549adaa08af40c0df384ca
+
 
 intro_page <- 
   tabPanel(
@@ -215,7 +215,7 @@ server <- function(input, output) {
  
 ##END FIRST TAB STUFF --------------------------------
   
-<<<<<<< HEAD
+
 ##SECOND TAB STUFF --------------------------
 output$No_Of_Suicides <- renderPlotly({
   suicidebyyearUSA <- filter(
@@ -239,7 +239,7 @@ output$No_Of_Suicides <- renderPlotly({
   
   })
 ##END SECOND TAB STUFF -----------------------------   
-=======
+
   
 ## THIRD TAB CODE ------------------------------------
   # server code for the map visualization
@@ -263,7 +263,7 @@ output$No_Of_Suicides <- renderPlotly({
   
 ## END OF THIRD TAB CODE ------------------------------------
   
->>>>>>> 7f80f4ece3d5643629549adaa08af40c0df384ca
+
 }
 
 # Run the application 
