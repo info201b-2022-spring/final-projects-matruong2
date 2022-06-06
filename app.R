@@ -106,8 +106,8 @@ first_tab <-
           br(),
           h3("Findings:"),
           h4("The overall average rate for all states from 2014-2020 was 16.01. The 
-          state with the highest over all average rate in this time was Wyoming with 26.53,
-          while the lowest of 7.93 belonged to New Jersey. The year with the over all 
+          state with the highest overall average rate in this time was Wyoming with 26.53,
+          while the lowest of 7.93 belonged to New Jersey. The year with the overall 
           highest average was 2017, while the lowest was 2014.
              ")
         ),
