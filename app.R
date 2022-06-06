@@ -37,14 +37,14 @@ intro_page <-
           overpopulated or not populated enough, there are parts of the country that have an increased rate 
           of suicide that may have a correlation with a poorer infrastructure."),
       h3("Research Questions"),
-      p("The primary quetions we are seeking to answer are:",
-        "How much has suicide changed through the years?"),
+      p("The primary quetions we are seeking to answer are:"),
+        p(strong("How much has suicide changed through the years?")),
       p("- Has suicide seen an increase overtime? This visualization can help understand which demographics
          has seen fluctuations."),
-      p("What is the amount of suicide percent to actual deaths?"),
+      p(strong("What is the amount of suicide percent to actual deaths?")),
       p("- Recorded suicides may not reflect mortality 1:1, though this data works from reported suicides
             multiple sources may report varying figures."),
-      p("What states have the highest rates of suicide?"),
+      p(strong("What states have the highest rates of suicide?")),
       p("- The US has many different environments which may have varying degrees of suicide prevelance which
             could be attributed to a wide variety of factors that can severely impact one's quality of life."),
       h3("Goals Of This Research"),
@@ -66,7 +66,7 @@ intro_page <-
       p(strong("Source 2: "), "https://www.kaggle.com/code/szamil/suicide-in-the-twenty-first-century/data"),
       p("This set of data was collected by WHO, and it talks about suicide rates throughout the world. The data talks about
           world suicide rates. There are 6 features and 43776 observations. We can answer the amount of suicides by year, sex, and age."),
-      p(strong("Source 3: "),"https://www.kaggle.com/datasets/twinkle0705/mental-health-and-suicide-rates?select=Human+Resources.csv"),
+      p(strong("Source 3: "), "https://www.kaggle.com/datasets/twinkle0705/mental-health-and-suicide-rates?select=Human+Resources.csv"),
       p("This dataset was collected by who, but was organized by Twinkle Khanna. For the human resources part, it shows the type of healthcare
           worker and the amount of them working per 100,000 population for each country in the data. There are 6 features and 107 observations. 
           This dataset can be merged with the previous datasets to show factors of how the amount of resources is related to suicide rates."),
@@ -232,8 +232,8 @@ summary_page <-
         a lack of mental health resources as well as social or work-related scarcity."),
       p("Wyoming having the highest rate of suicide supports the findings of the graphs/map 
         because it is not as densely populated and likely has a poorer infrastructure for 
-        mental healthcafre. In towns where the nearest grocery store is many miles away, the 
-        nearest mental heathcare facility is likely even less accessible."),
+        mental healthcare. In towns where the nearest grocery store is many miles away, the 
+        nearest mental healthcare facility is likely even less accessible."),
       p("A rather interesting finding was the sharp increase in suicide among the 35-54 year-old
          age group. This may be an underserved or overlooked demographic within mental health and
          suicide prevention."),
