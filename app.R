@@ -5,6 +5,7 @@ library(DT)
 library(dplyr)
 library(tidyverse)
 library(usmap)
+library(shinythemes)
 cdc_data <- read.csv("data/suicide_mortality.csv") %>%
   filter(YEAR != 2005) %>%
   select(STATE, YEAR, RATE, DEATHS)
@@ -21,13 +22,73 @@ US_data <- US_data %>%
 
 
 intro_page <- 
-  tabPanel(
-    "Introduction",
-    fluidPage(
-      h1("This Is the Intro Page"),
-      p("This is where we put the intro stuff blahhhhhhhh.")
-    )
-  )
+  tabPanel("Introduction", fluid = TRUE, sidebarLayout(
+    sidebarPanel(
+      h3("Context: Mental Health In The US"),
+      p("Healthcare in the US as a whole has many glaring flaws but mental health has been a
+          growing source of concern. With an imbalance of accessibility and a taboo regarding 
+          seeking professional help, many Americans have turned to suicide in search of solace.
+          In the year 2016 we found that there were (per 100k individuals): 11 psychiatrists, 
+          30 psychologists, 60 social workers, and 4 nurses. The disparity of mental health workers
+          and citizens is concerningly large and this research demonstrates the necessity for growth
+          in this industry."),
+      p("Though it may seem that awareness is growing, people are unaware of the challenges associated 
+          with finding help, especially in certain parts of the country. Whether the particular state is 
+          overpopulated or not populated enough, there are parts of the country that have an increased rate 
+          of suicide that may have a correlation with a poorer infrastructure."),
+      h3("Research Questions"),
+      p("The primary quetions we are seeking to answer are:",
+         "How much has suicide changed through the years?"),
+      p("- Has suicide seen an increase overtime? This visualization can help understand which demographics
+         has seen fluctuations."),
+       p("What is the amount of suicide percent to actual deaths?"),
+    p("- Recorded suicides may not reflect mortality 1:1, though this data works from reported suicides
+            multiple sources may report varying figures."),
+     p("What states have the highest rates of suicide?"),
+    p("- The US has many different environments which may have varying degrees of suicide prevelance which
+            could be attributed to a wide variety of factors that can severely impact one's quality of life."),
+    h3("Goals Of This Research"),
+    p("This research and visualization may bring awareness to certain parts of our country in need of greater 
+          resources and support. The severity of the mental health crisis in the US is not captured by the statistics
+          that describe the entirety of the US and seeing the data rather than simply numbers hopefully creates a 
+          greater sense of urgency to enact change."),
+    p("This is a highly sensitive topic and we hope to approach this sensibly. Outliers and erroneous datapoints 
+          do a great injustice to lives lost but unfortunately, agencies responsible for reporting the data do
+          not have a standardized form of reporting which causes discrepencies."),
+    h3("Our Sources"),
+    p(strong("Source 1: "), "https://www.cdc.gov/nchs/pressroom/sosmap/suicide-mortality/suicide.htm"),
+    p("The data was collected from 3000+ local jurisdictions and each city, county, and state determines the data to 
+          share with the CDC. However, the CDC plays a neutral role as the reporting is conducted by local jurisdictions.
+          There are 400 rows within this dataset from the CDC. There are 5 columns, but one is a URL and does not contain 
+          specific data about the state/year/suicide/death count This dataset could be merged with economic trends by year 
+          to answer how the state of economy influences suicide rates. Other datasets merged with this one could show 
+          causal factors for suicide propensity such as technological access, GDP, homelessness, and much more."),
+    p(strong("Source 2: "), "https://www.kaggle.com/code/szamil/suicide-in-the-twenty-first-century/data"),
+    p("This set of data was collected by WHO, and it talks about suicide rates throughout the world. The data talks about
+          world suicide rates. There are 6 features and 43776 observations. We can answer the amount of suicides by year, sex, and age."),
+    p(strong("Source 3: "),"https://www.kaggle.com/datasets/twinkle0705/mental-health-and-suicide-rates?select=Human+Resources.csv"),
+    p("This dataset was collected by who, but was organized by Twinkle Khanna. For the human resources part, it shows the type of healthcare
+          worker and the amount of them working per 100,000 population for each country in the data. There are 6 features and 107 observations. 
+          This dataset can be merged with the previous datasets to show factors of how the amount of resources is related to suicide rates."),
+    h3("Authors/Creators"),
+    p(strong("Authors:"), "Em Tallman, Jirat Rymparsurat, Martin Truong, Tyler Takeuchi"),
+    p("The Information School, University of Washington"),
+    p("Spring 2022")
+  ),
+
+mainPanel(
+  img(src = "https://www.hopkinsmedicine.org/sebin/x/u/spring%20suicide.jpg",
+      width = "95%", height = "95%"),
+  p(""),
+  img(src = "https://chicagotherapist.com/wp-content/uploads/2020/09/suicide-prevention-chicagotherapist.jpg",
+      width = "95%", height = "95%"),
+  p("")
+)
+)
+)
+
+
+
 
 first_tab <-                  
   tabPanel(                
@@ -151,10 +212,11 @@ summary_page <-
 
 # combine all pages, create ui
 ui <- (                         
-  fluidPage(                    
+  fluidPage( 
+    theme = shinytheme("darkly"),
     navbarPage (                
       
-      "WE NEED A TITLE FOR THIS PAGE",
+      "Suicide Mortality In The US: Between State Lines",
       intro_page,
       first_tab,
       second_tab,
