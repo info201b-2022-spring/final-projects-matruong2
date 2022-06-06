@@ -184,8 +184,8 @@ server <- function(input, output) {
                     line = list(color = "rgb(8,48,107)", width = 1.5))
       )
     fig <- fig %>% layout(title = "Rates by State in a Year",
-                          xaxis = list(title = "", tickangle = -45),
-                          yaxis = list(title = ""),
+                          xaxis = list(title = "State", tickangle = -45),
+                          yaxis = list(title = "Average Suicide Rate"),
                           margin = list(b = 100),
                           barmode = 'group'
     )
@@ -205,7 +205,9 @@ server <- function(input, output) {
       mode = "lines"
     )
       fig <- fig %>% layout(
-        title = "Rates by State 2014 - 2020"
+        title = "Rates by State 2014 - 2020",
+        xaxis = list(title = "Average Suicide Rate"),
+        yaxis = list(title = "Year")
     )
   })
   
