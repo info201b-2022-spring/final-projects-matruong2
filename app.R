@@ -6,6 +6,7 @@ library(dplyr)
 library(tidyverse)
 library(usmap)
 library(shinythemes)
+library(showtext)
 cdc_data <- read.csv("data/suicide_mortality.csv") %>%
   filter(YEAR != 2005) %>%
   select(STATE, YEAR, RATE, DEATHS)
@@ -13,7 +14,7 @@ cdc_data$DEATHS <- as.numeric(cdc_data$DEATHS)
 
 
 WorldSuicide <- read_csv("data/who_suicide_statistics.csv")
-source("scatter and lines for final project2.0.R")
+
 
 US_data <- read.csv("data/suicide_mortality.csv")
 colnames(US_data)[2] <- "state"

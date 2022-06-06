@@ -1,0 +1,13 @@
+name: Suicide-Mortality-In-US
+title: Suicide-Mortality-In-US
+username:
+account: jiratrymuw
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6437151
+bundleId: 5981180
+url: https://jiratrymuw.shinyapps.io/Suicide-Mortality-In-US/
+when: 1654502594.01766
+lastSyncTime: 1654502594.01766
+asMultiple: FALSE
+asStatic: FALSE
