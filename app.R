@@ -202,7 +202,7 @@ third_tab <-
              time and/or location in the United States?"),
           
           h3("Findings:"),
-          h4("Based on the maximum of the rate bar on the bottom left of the graph,
+          h4("Based on the maximum of the rate bar to the right of the graph,
              we can see that the lowest max death rate is in 2014 since the bar
              doesn't reach 25, and the highest max rate is in 2020 since the bar
              is above 30. This doesn't mean that there's a linear relationship,
@@ -210,8 +210,8 @@ third_tab <-
              of the suicide death rate over the years. Throughout the years, the 
              states on the West side usually have the highest rates, which is 
              surprising because it was the states with the mid to lower
-             populations compared to other states in the west coast that had 
-             higher suicide death rates.")
+             populations that had higher suicide death rates compared to the
+             states with higher populations.")
           
         ),
         mainPanel(
