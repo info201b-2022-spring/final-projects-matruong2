@@ -234,8 +234,12 @@ output$No_Of_Suicides <- renderPlotly({
     type = "scatter",
     mode = "lines")
     
-      
-    
+  fig <- fig %>% layout(
+    title = "Number of Suicides By Age Group",
+    plot_bgcolor = "76D4F7",
+    xaxis = list(title = 'Years'),
+    yaxis = list(title = 'Number of Suicides')
+  )
   
   })
 ##END SECOND TAB STUFF -----------------------------   
