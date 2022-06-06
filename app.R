@@ -11,7 +11,7 @@ cdc_data <- read.csv("data/suicide_mortality.csv") %>%
 cdc_data$DEATHS <- as.numeric(cdc_data$DEATHS)
 
 WorldSuicide <- read_csv("data/who_suicide_statistics.csv")
-
+source("scatter and lines for final project2.0.R")
 
 intro_page <- 
   tabPanel(
@@ -80,17 +80,24 @@ second_tab <-
       h1("Suicides per Year by Age Groups"),
       p(sidebarLayout(
         sidebarPanel(
+          h3("Select an age group to view the number of suicides"),
           
-          # Copy the chunk below to make a group of checkboxes
-          radioButtons("checkGroup", label = h2("Age Groups"), 
+      
+          radioButtons("checkGroup", label = h3("Age Groups"), 
                              choices = list("5 - 14 Years Old" = "5-14 years", "15 - 24 Years Old" = "15-24 years",
                                             "25 - 34 Years Old" = "25-34 years", "35 - 54 Years Old" = "35-54 years",
                                             "55 - 74 Years Old" = "55-74 years", "75+ Years Old" = "75+ years"),
                              selected = "5-14 years"),
+          h3("Question:"),
+          h4("How does the number of suicides change depending on age group and through the years?"),
+          
+          h3("Findings:"),
+          h4("There seems to be an increase of suicides as people get older, then the amount drops off around 55 years old. Overall though, as the years go by the number of suicides goes up for every age group.")
           
         ),
         
-        mainPanel("banana"
+        mainPanel(
+          plotlyOutput(outputId = "No_Of_Suicides")
                   
         )
       )
@@ -186,6 +193,29 @@ server <- function(input, output) {
  
 ##END FIRST TAB STUFF --------------------------------
   
+##SECOND TAB STUFF --------------------------
+output$No_Of_Suicides <- renderPlotly({
+  suicidebyyearUSA <- filter(
+    WorldSuicide,
+    country == "United States of America") %>%
+    filter(year >= 2000)%>% 
+    group_by(year) %>% 
+    na.omit(WorldSuicide)%>%
+    filter(age == input$checkGroup)%>%
+    summarize(suicides_no = sum(suicides_no))
+  
+  fig <- plot_ly(
+    data = suicidebyyearUSA,
+    x = ~year,
+    y = ~suicides_no,
+    type = "scatter",
+    mode = "lines")
+    
+      
+    
+  
+  })
+##END SECOND TAB STUFF -----------------------------   
 }
 
 # Run the application 
