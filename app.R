@@ -160,10 +160,7 @@ second_tab <-
           h4("How does the number of suicides change depending on age group and through the years?"),
           
           h3("Findings:"),
-          h4("There seems to be an increase of suicides as people get older, then the amount drops off around 55 years old. Overall though, as the years go by the number of suicides goes up for every age group."),
-          
-          h3("Considerations:"),
-          h4("As the years go by, the capabilities of data collection can change. There is also the amount of information and how it can travel around the United States")
+          h4("There seems to be an increase of suicides as people get older, then the amount drops off around 55 years old. Overall though, as the years go by the number of suicides goes up for every age group.")
           
         ),
         
@@ -327,20 +324,11 @@ output$No_Of_Suicides <- renderPlotly({
     x = ~year,
     y = ~suicides_no,
     type = "scatter",
-    mode = "lines",
-    line = list(color = "FF5D73"),
-    marker = list(
-      color = "6279B8",
-      size = 10,
-      shape = 18
-      
-    )
-    )
-    
+    mode = "lines")
     
   fig <- fig %>% layout(
     title = "Number of Suicides By Age Group",
-    plot_bgcolor = "FCEFEF",
+    plot_bgcolor = "76D4F7",
     xaxis = list(title = 'Years'),
     yaxis = list(title = 'Number of Suicides')
   )
