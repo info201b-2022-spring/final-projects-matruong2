@@ -273,6 +273,7 @@ server <- function(input, output) {
                     line = list(color = "rgb(255,93,115)", width = 1.5))
       )
     fig <- fig %>% layout(title = "Rates by State in a Year",
+                          plot_bgcolor = "FCEFEF",
                           xaxis = list(title = "State", tickangle = -45),
                           yaxis = list(title = "Average Suicide Rate"),
                           margin = list(b = 100),
@@ -297,13 +298,14 @@ server <- function(input, output) {
     )
       fig <- fig %>% layout(
         title = "Rates by State 2014 - 2020",
+        plot_bgcolor = "FCEFEF",
         xaxis = list(title = "Average Suicide Rate"),
         yaxis = list(title = "Year")
     )
   })
   
   output$rate_table <- renderDataTable({
-   the_table <- cdc_data 
+   the_table <- cdc_data
     })
  
 ##END FIRST TAB STUFF --------------------------------
