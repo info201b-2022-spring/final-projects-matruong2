@@ -118,9 +118,25 @@ third_tab <-
     "Map Visualization",
     fluidPage(
       titlePanel("U.S. Map of Suicide Death Rates"),
-      p("Maybe some kind of intro describing data shown"),
       sidebarLayout(
         sidebarPanel(
+          p("This page shows a visual of how suicide death rates have been changing 
+            over time. The dataset mainly has data from 2014-2020."),
+          p("Use the slider to pick a year to display the map showing the death
+            rates for each state"),
+          
+          h3("Question:"),
+          h4("What patterns are shown in how suicide death rates are changing over
+             time and/or location in the United States?"),
+          
+          h3("Findings:"),
+          h4("Based on the maximum of the rate bar on the bottom left of the graph,
+             we can see that the lowest max death rate is in 2014 since the bar
+             doesn't reach 25, and the highest max rate is in 2020 since the bar
+             is above 30. This doesn't mean that there's a linear relationship,
+             but it does show that there's an overall slightly increasing trend
+             of the suicide death rate over the years."),
+          
           sliderInput(
             inputId = "mapYear",
             label = "Year",
