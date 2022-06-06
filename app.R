@@ -72,12 +72,28 @@ first_tab <-
 
 second_tab <- 
   tabPanel( 
-    "Tab Two", 
+    "Suicides per Year by Age Groups", 
     fluidPage( 
-      h1("Whatever is gonna go here"),
-      p("more interactive stuff")
+      h1("Suicides per Year by Age Groups"),
+      p(sidebarLayout(
+        sidebarPanel(
+          
+          # Copy the chunk below to make a group of checkboxes
+          checkboxGroupInput("checkGroup", label = h3("Age Groups"), 
+                             choices = list("5 - 14 Years Old" = "5-14 years", "15 - 24 Years Old" = "15-24 years",
+                                            "25 - 34 Years Old" = "25-34 years", "35 - 54 Years Old" = "35-54 years",
+                                            "55 - 74 Years Old" = "55-74 years", "75+ Years Old" = "75+ years"),
+                             selected = "5-14 years"),
+          
+        ),
+        
+        mainPanel("banana"
+                  
+        )
+      )
+      ))
     )
-  ) 
+   
 
 
 third_tab <- 
