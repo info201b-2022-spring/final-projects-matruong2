@@ -163,7 +163,7 @@ second_tab <-
           h4("There seems to be an increase of suicides as people get older, then the amount drops off around 55 years old. Overall though, as the years go by the number of suicides goes up for every age group."),
           
           h3("Considerations:"),
-          h4("As the years go by, the capabilities of data collection can change. There is also the amount of information and how it can travel around the United States")
+          h4("As the years go by, the capabilities of data collection can change. There is also the amount of information and how it can travel around the United States.")
           
         ),
         
@@ -285,11 +285,10 @@ server <- function(input, output) {
       x = ~STATE,
       y = ~RATE,
       type = 'bar',
-      marker = list(color = "rgb(98,121,184)",
-                    line = list(color = "rgb(255,93,115)", width = 1.5))
+      marker = list(color = "AFB4D4",
+                    line = list(color = "6279B8", width = 1.5))
     )
     fig <- fig %>% layout(title = "Rates by State in a Year",
-                          plot_bgcolor = "FCEFEF",
                           xaxis = list(title = "State", tickangle = -45),
                           yaxis = list(title = "Average Suicide Rate"),
                           margin = list(b = 100),
