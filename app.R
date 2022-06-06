@@ -4,6 +4,9 @@ library(ggplot2)
 cdc_data <- read.csv("data/suicide_mortality.csv")
 cdc_data$DEATHS <- as.numeric(cdc_data$DEATHS)
 
+WorldSuicide <- read_csv("data/who_suicide_statistics.csv")
+
+
 intro_page <- 
   tabPanel(
     "Introduction",
@@ -42,7 +45,7 @@ second_tab <-
         sidebarPanel(
           
           # Copy the chunk below to make a group of checkboxes
-          checkboxGroupInput("checkGroup", label = h3("Age Groups"), 
+          radioButtons("checkGroup", label = h2("Age Groups"), 
                              choices = list("5 - 14 Years Old" = "5-14 years", "15 - 24 Years Old" = "15-24 years",
                                             "25 - 34 Years Old" = "25-34 years", "35 - 54 Years Old" = "35-54 years",
                                             "55 - 74 Years Old" = "55-74 years", "75+ Years Old" = "75+ years"),
